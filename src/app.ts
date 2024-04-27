@@ -11,12 +11,6 @@ import logger from "./core/logger";
 // Create Express server
 const app = express();
 
-// Initialize the context object
-app.use((req: Request, _: Response, next: NextFunction) => {
-  req.context = {};
-  next();
-});
-
 // Configure HTTP request logger middleware
 app.use(
   morgan("combined", {

@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-component",
-  "version": "1.0.0",
-  "description": "Template for Express.js components.",
+  "name": "prisoners-dilemma-api",
+  "version": "0.0.1",
+  "description": "The API for the Prisoner's Dilemma game simulation",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && npx tsc",
@@ -13,10 +13,9 @@
     "dev": "concurrently \"npx tsc -w\" \"nodemon\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Youssef Atta'i",
+  "license": "MIT",
   "dependencies": {
-    "@fcai-sis/shared-utilities": "latest",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.18.2",
