@@ -1,6 +1,8 @@
 import * as jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 
+import env from "../../../../env";
+
 /**
  * Middleware that decodes a token from the authorization header and adds the username to the request body
  */
@@ -29,7 +31,7 @@ export default async function decodeTokenMiddleware(req: Request, res: Response,
   let decoded: jwt.JwtPayload;
 
   try {
-    decoded = jwt.verify(authHeader, "secret") as jwt.JwtPayload;
+    decoded = jwt.verify(authHeader, env.JWT_SECRET!) as jwt.JwtPayload;
   } catch (error) {
     res.status(401).json({ summary: "Unauthorized", details: "The provided token was invalid" });
     return;
