@@ -13,6 +13,7 @@ export default async function registerHandler(req: Request, res: Response) {
 
   const user = await UserModel.findOne({ username });
 
+  // If user with that username already exists
   if (user) {
     res.status(409).json({ summary: "Conflict", details: "A user with that username already exists" });
     return;

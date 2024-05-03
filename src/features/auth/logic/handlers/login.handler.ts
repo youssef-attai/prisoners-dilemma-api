@@ -13,6 +13,7 @@ export default async function loginHandler(req: Request, res: Response) {
 
   const user = await UserModel.findOne({ username });
 
+  // If user with that username does not exist
   if (!user) {
     res.status(401).json({ summary: "Unauthorized", details: "Invalid username or password" });
     return;
